@@ -36,7 +36,13 @@ function listening(){
 app.post('/add', callBack);
 function callBack(req,res){
   res.send('POST received');
-  projectData = req.body;
+  newEntry = {
+    date: req.body.date,
+    temp: req.body.temp,
+    content: req.body.content
+  }
+  console.log('newEntry ', newEntry);
+  projectData = newEntry;
   console.log('add to projectData ', projectData);
 }
 
